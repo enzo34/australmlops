@@ -14,11 +14,11 @@ Cette application est à destination des assurances afin de déterminer à parti
     },
 ```
 L'application est un simple formulaires qui sera plus tard convertis en Web Components pour être utiliser sur n'importe quelle application via un CDN.
-Pour tester l'application vous pouvez lancer la commande
+Pour tester l'application vous pouvez lancer la commande.
 ```bash
 docker-compose up -d
 ```
-
+Bien sure assurez vous d'avoir Docker d'installer sur votre machine
 Vous trouverez l'application en fonctionnement sur l'addresse http://locahost.
 
 # Machine Learning
