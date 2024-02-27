@@ -1,6 +1,7 @@
 Pour tester l'application vous pouvez lancer la commande
 ```bash
 docker-compose up -d
+```
 
 Vous trouverez l'application en fonctionnement sur l'addresse http://locahost.
 
