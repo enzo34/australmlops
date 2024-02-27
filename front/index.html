@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction Offre Assurance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulaire de Prédiction d'Offre d'Assurance</h2>
+        <form id="predictionForm">
+            <input type="number" id="age" placeholder="Âge" required>
+            <select id="sexe" required>
+                <option value="">Sexe...</option>
+                <option value="M">Masculin</option>
+                <option value="F">Féminin</option>
+            </select>
+            <input type="number" id="enfants_a_charge" placeholder="Enfants à charge" required>
+            <select id="type_de_vehicule" required>
+                <option value="">Type de véhicule</option>
+                <option value="Voiture">Voiture</option>
+                <option value="Moto">Moto</option>
+                <option value="Vélo">Vélo</option>
+            </select>
+            <input type="number" id="experience_de_conduite" placeholder="Expérience de conduite (en années)" required>
+            <select id="situation_familiale" required>
+                <option value="">Situation Familliale</option>
+                <option value="Marié(e)">Marié(e)</option>
+                <option value="Célibataire">Célibataire</option>
+                <option value="Divorcé(e)">Divorcé(e)</option>
+            </select>
+            <select id="historique_accidents" required>
+                <option value="">Historique accidents</option>
+                <option value="Aucun">Aucun</option>
+                <option value="Mineur">Mineur</option>
+                <option value="Majeur">Majeur</option>
+            </select>
+            <select id="usage_vehicule" required>
+                <option value="">Usage Véhicule</option>
+                <option value="Personnel">Personnel</option>
+                <option value="Professionnel">Professionnel</option>
+                <option value="Les deux">Les deux</option>
+            </select>
+            <select id="couverture_souhaitee" required>
+                <option value="">Couverture souhaitée</option>
+                <option value="Basique">Basique</option>
+                <option value="Étendue">Étendue</option>
+                <option value="Totale">Totale</option>
+            </select>
+            <button type="submit">Prédire l'Offre</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  api:
+    image: enzo3442/australmlops-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api:/app
+
+  front:
+    image: enzo3442/australmlops-front
+    ports:
+      - "80:80"
+    volumes:
+      - ./front:/usr/share/nginx/html
