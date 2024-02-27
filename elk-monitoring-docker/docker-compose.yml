@@ -1,0 +1,51 @@
+version: '3.8'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.10.0
+    container_name: logstash
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+  
+  api:
+    image: enzo3442/australmlops-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../api:/app
+    depends_on:
+      - elasticsearch
+
+  front:
+    image: enzo3442/australmlops-front
+    ports:
+      - "80:80"
+    volumes:
+      - ../front:/usr/share/nginx/html
+
+volumes:
+  esdata1:
+    driver: local
