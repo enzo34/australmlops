@@ -1,15 +1,14 @@
+from flask import Flask, request, jsonify
+import pandas as pd
+from joblib import load
+from flask_cors import CORS
 # Importing necessary libraries
-from flask import Flask, request, jsonify  # Flask is a web framework, request is used to handle HTTP requests, jsonify is used to convert Python objects to JSON format
-import pandas as pd  # pandas is a library for data manipulation and analysis
-from joblib import load  # joblib is used to load pre-trained machine learning models
-from flask_cors import CORS  # CORS is used to handle Cross-Origin Resource Sharing
-
 # Loading the pre-trained random forest model
 rf_model = load('best_rf_model_pipeline.joblib')
 
 # Creating a Flask web application
 app = Flask(__name__)
-CORS(app)  # Enabling CORS for the Flask app
+CORS(app, resources={r"/*": {"origins": "*"}})  # Enabling CORS for the Flask app
 
 # Defining a route for making predictions
 @app.route('/predict', methods=['POST'])
